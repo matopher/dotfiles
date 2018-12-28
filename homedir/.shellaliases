@@ -4,6 +4,14 @@
 # Simple Program Name Shortening
 alias g=git
 
+alias gs='git status'
+
+alias isync='browser-sync start --server --files="**/*"'
+
+alias gitrollback='git clean -df && git checkout -- .'
+
+alias git=hub
+
 #############################
 # Utilities
 
@@ -92,3 +100,9 @@ alias spoton="sudo mdutil -a -i on"
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; mas upgrade; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
 
 alias vtop="vtop --theme wizard"
+
+# Laravel Shortcuts
+alias pa='php artisan'
+
+# Jigsaw Shortcuts
+alias jb='./vendor/bin/jigsaw build'

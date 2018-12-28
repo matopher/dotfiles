@@ -53,3 +53,8 @@ unsetopt correct
 
 # run fortune on new terminal :)
 fortune
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

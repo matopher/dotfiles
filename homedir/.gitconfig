@@ -1,9 +1,9 @@
 [user]
-  name = GITHUBFULLNAME
-  email = GITHUBEMAIL
+	name = Matt Woods
+	email = mw@mattwoods.io
 [github]
   # https://github.com/blog/180-local-github-config
-  user = GITHUBUSER
+  user = matopher
 [color]
 # ui = true is a superset of all the more specific color options
 #  as documented at http://book.git-scm.com/5_customizing_git.html
@@ -169,7 +169,7 @@
   keepBackup = false
 
 [merge]
-  tool = vimdiff
+	tool = vimdiff
   # Always show a diffstat at the end of a merge
   stat = true
   conflictstyle = diff3
@@ -195,6 +195,7 @@
   smudge = git media smudge %f
 
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
   required = true
+	process = git-lfs filter-process

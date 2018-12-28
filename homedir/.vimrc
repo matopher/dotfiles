@@ -45,15 +45,18 @@ Plugin 'sjl/gundo.vim'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'godlygeek/tabular'
 " language tools
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'millermedeiros/vim-esformatter'
 Plugin 'digitaltoad/vim-pug'
-" Plugin 'elzr/vim-json'
+Plugin 'elzr/vim-json'
+Plugin 'mattn/emmet-vim'
 " Plugin 'SirVer/ultisnips'
-"Plugin 'sheerun/vim-polyglot'
+Plugin 'sheerun/vim-polyglot'
 " plugins from http://vim-scripts.org/vim/scripts.html
 Plugin 'node.js'
 Plugin 'SuperTab'
+Plugin 'tpope/vim-commentary'
+Plugin 'kien/ctrlp.vim'
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -68,6 +71,12 @@ Plugin 'SuperTab'
 Plugin 'leafgarland/typescript-vim'
 " Vue.js
 Plugin 'posva/vim-vue'
+Plugin 'jiangmiao/auto-pairs'
+" Plugin 'w0rp/ale'
+" PHP Plugins
+Plugin 'StanAngeloff/php.vim'
+Plugin 'arnaud-lb/vim-php-namespace'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -204,10 +213,6 @@ set foldopen-=undo " don't open folds when you undo stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let b:match_ignorecase = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Perl
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let perl_extended_vars=1 " highlight advanced perl vars inside strings
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom Functions
@@ -294,13 +299,19 @@ let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_eslint_checker = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_enable_tslint_checker = 1
 let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 let g:syntastic_enable_pug_checker = 1
 let g:syntastic_pug_checkers = ['jade','pug']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ctrlp
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|vendor'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
