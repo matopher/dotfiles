@@ -7,9 +7,9 @@ syntax enable
 let g:solarized_termtrans = 1
 call togglebg#map("<F5>")
 if has('gui_running')
-    set background=light
-else
     set background=dark
+" else
+"     set background=dark
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -310,7 +310,10 @@ let g:syntastic_pug_checkers = ['jade','pug']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ctrlp
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|vendor'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  'node_modules\|git\|vendor\|build_local',
+  \ 'file': 'DS_Store'
+  \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other
