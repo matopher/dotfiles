@@ -1,16 +1,51 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Must Have
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme solarized
 " syntax on " syntax highlighting on
 syntax enable
-let g:solarized_termtrans = 1
-call togglebg#map("<F5>")
-if has('gui_running')
-    set background=dark
+" let g:solarized_termtrans = 1
+" call togglebg#map("<F5>")
+" if has('gui_running')
+"     set background=dark
 " else
 "     set background=dark
-endif
+" endif
+
+let mapleader = ','
+set linespace=15
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Visuals
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme ayu
+
+let ayucolor="mirage"
+
+set guifont=Menlo:h12
+
+" Remove scrollbars
+set guioptions-=l
+
+set guioptions-=L
+
+set guioptions-=r
+
+set guioptions-=R
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Split Management
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set splitbelow
+
+set splitright
+
+
+nmap <C-J> <C-W><C-J>
+
+nmap <C-K> <C-W><C-K>
+
+nmap <C-H> <C-W><C-H>
+
+nmap <C-L> <C-W><C-L>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
@@ -18,80 +53,8 @@ endif
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+so ~/.vim/plugins.vim         " Source plugins from separate file
 
-" Keep Plugin commands between vundle#begin/end.
-" let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
-" Plugin 'Valloric/YouCompleteMe'
-" Navigation (IDE frame)
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-sensible'
-Plugin 'justinmk/vim-sneak'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-surround'
-Plugin 'dkprice/vim-easygrep'
-Plugin 'editorconfig/editorconfig-vim'
-" visual undo list
-Plugin 'sjl/gundo.vim'
-" Plugin 'majutsushi/tagbar'
-" markdown preview: opens browser with live reload when vim opens .md
-Plugin 'suan/vim-instant-markdown'
-Plugin 'godlygeek/tabular'
-" language tools
-" Plugin 'scrooloose/syntastic'
-Plugin 'millermedeiros/vim-esformatter'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'elzr/vim-json'
-Plugin 'mattn/emmet-vim'
-" Plugin 'SirVer/ultisnips'
-Plugin 'sheerun/vim-polyglot'
-" plugins from http://vim-scripts.org/vim/scripts.html
-Plugin 'node.js'
-Plugin 'SuperTab'
-Plugin 'tpope/vim-commentary'
-Plugin 'kien/ctrlp.vim'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-" TypeScript
-Plugin 'leafgarland/typescript-vim'
-" Vue.js
-Plugin 'posva/vim-vue'
-Plugin 'jiangmiao/auto-pairs'
-" Plugin 'w0rp/ale'
-" PHP Plugins
-Plugin 'StanAngeloff/php.vim'
-Plugin 'arnaud-lb/vim-php-namespace'
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -151,7 +114,7 @@ set incsearch " BUT do highlight as you type you search phrase
 set so=5 " Keep 5 lines (top/bottom) for scope
 set novisualbell " don't blink
 " statusline example: ~\myfile[+] [FORMAT=format] [TYPE=type] [ASCII=000] [HEX=00] [POS=0000,0000][00%] [LEN=000]
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2 " always show the status line
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -181,7 +144,6 @@ set smartcase " if there are caps, go case-sensitive
 set completeopt=menu,longest,preview " improve the way autocomplete works
 set cursorcolumn " show the current column
 set cursorline
-" hi CursorLine term=underline ctermbg=008 guibg=#493a35
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Folding
@@ -225,12 +187,12 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" map <up> <ESC>:bp<RETURN> " left arrow (normal mode) switches buffers
-" map <down> <ESC>:bn<RETURN> " right arrow (normal mode) switches buffers
-" map <right> <ESC>:Tlist<RETURN> " show taglist
-" map <left> <ESC>:NERDTreeToggle<RETURN>  " moves left fa split
-" map <F2> <ESC>ggVG:call SuperRetab()<left>
-" map <F12> ggVGg? " apply rot13 for people snooping over shoulder, good fun
+nmap <Leader>ev :tabedit $MYVIMRC<cr>
+nmap <Leader>evp :tabedit ~/.vim/plugins.vim<cr>
+
+" Toggle NERDtree with C-n
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Useful abbrevs
@@ -240,19 +202,10 @@ iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufRead,BufNewFile *.zcml set filetype=xml
-au BufRead,BufNewFile *.rb,*.rhtml set tabstop=2
-au BufRead,BufNewFile *.rb,*.rhtml set shiftwidth=2
-au BufRead,BufNewFile *.rb,*.rhtml set softtabstop=2
-au BufRead,BufNewFile *.otl set syntax=blockhl
-au BufRead,BufNewFile *.json set syntax=javascript
-au FileType python set omnifunc=pythoncomplete#Complete
-au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-au FileType html set omnifunc=htmlcomplete#CompleteTags
-au FileType css set omnifunc=csscomplete#CompleteCSS
-au FileType xml set omnifunc=xmlcomplete#CompleteTags
-au FileType c set omnifunc=ccomplete#Complete
-" autocmd vimenter * NERDTree
+augroup autosourcing
+    autocmd!
+    autocmd BufWritePost .vimrc source %
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Change paging overlap amount from 2 to 5 (+3)
@@ -278,34 +231,32 @@ vnoremap <silent> <leader>es :EsformatterVisual<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.DS_Store$']
-" auto open if no file sent as arg
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" Toggle NERDtree with C-n
-map ,n <plug>NERDTreeTabsToggle<CR>
+
+let g:NERDTreeHijackNetrw=0
+
 " Autoclose if only NERDtree is left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_html_tidy_quiet_messages = { "level": "warnings" }
-let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
+" let g:syntastic_html_tidy_quiet_messages = { "level": "warnings" }
+" let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_eslint_checker = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_enable_tslint_checker = 1
-let g:syntastic_typescript_checkers = ['tslint', 'tsc']
-let g:syntastic_enable_pug_checker = 1
-let g:syntastic_pug_checkers = ['jade','pug']
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_enable_eslint_checker = 1
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_enable_tslint_checker = 1
+" let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+" let g:syntastic_enable_pug_checker = 1
+" let g:syntastic_pug_checkers = ['jade','pug']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ctrlp
