@@ -3,17 +3,26 @@ syntax enable
 "-------------General Settings--------------"
 set backspace=indent,eol,start                                          "Make backspace behave like every other editor.
 let mapleader = ','
-set linespace=10
-set tabstop=4                   					" a tab is four spaces
-set expandtab
-set softtabstop=4
-set shiftwidth
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 " set autowriteall
 
 "Show (partial) command in the status line
 set showcmd
+
+" Autocomplete with dictionary words when spell check is on
+set complete+=kspell
+
+"-------------Text Formatting--------------"
+set linespace=10
+set textwidth=120
+
+set tabstop=4                   					" a tab is four spaces
+set softtabstop=4
+set shiftwidth=4
+set shiftround          " when at 3 spaces, and I hit > ... go to 4, not 5
+set expandtab           " no real tabs!
+filetype plugin indent on " load filetype plugins and indent settings
 
 "-------------Visuals--------------"
 set termguicolors     " enable true colors support
@@ -43,7 +52,6 @@ set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase,
 
 "-------------Split Management--------------"
-
 set splitbelow
 set splitright
 
@@ -58,7 +66,7 @@ filetype off                  " required
 
 so ~/.vim/plugins.vim         " Source plugins from separate file
 
-"-------------Mapppings--------------"
+"-------------Mappings--------------"
 "Shortcut to edit vimrc and plugin files
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
 nmap <Leader>evp :tabedit ~/.vim/plugins.vim<cr>
@@ -69,6 +77,9 @@ nmap <Leader>es :e ~/.vim/snippets/<cr>
 
 "Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
+
+" Switch between the last two files
+nnoremap <Leader><Leader> <C-^>
 
 " CtrlP Mappings
 " nmap <D-p> :CtrlP<cr>
@@ -100,6 +111,14 @@ function! IPhpExpandClass()
 endfunction
 autocmd FileType php inoremap <Leader>nf <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>nf :call PhpExpandClass()<CR>
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it for commit messages, when the position is invalid, or when
+" inside an event handler (happens when dropping a file on gvim).
+autocmd BufReadPost *
+\ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+\   exe "normal g`\"" |
+\ endif
 
 "-------------Laravel-Specific--------------"
 nmap <Leader>lr :e routes/web.php<cr>
