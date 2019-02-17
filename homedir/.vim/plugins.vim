@@ -35,7 +35,9 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'node.js'
 Plugin 'SuperTab'
 Plugin 'tpope/vim-commentary'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'rking/ag.vim'
+Plugin 'skwp/greplace.vim'
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
