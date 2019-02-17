@@ -76,6 +76,13 @@ augroup autosourcing
     autocmd BufWritePost .vimrc source %
 augroup END
 
+"-------------Laravel-Specific--------------"
+nmap <Leader>lr :e routes/web.php<cr>
+nmap <Leader>lm :!php artisan make:
+nmap <Leader><Leader>c :e app/Http/Controllers/<cr>
+nmap <Leader><Leader>m :e app/<cr>
+nmap <Leader><Leader>v :e resources/views<cr>
+
 "-------------NERDTree--------------"
 let NERDTreeIgnore=['\.DS_Store$'] 					" let NERDTreeShowHidden=1
 
