@@ -12,6 +12,8 @@ alias gitrollback='git clean -df && git checkout -- .'
 
 alias git=hub
 
+alias dotfiles='cd ~/.dotfiles'
+
 #############################
 # Utilities
 

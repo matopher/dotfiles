@@ -6,9 +6,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
-" Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-vinegar'
-
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
@@ -18,38 +16,23 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'editorconfig/editorconfig-vim'
-" visual undo list
-Plugin 'sjl/gundo.vim'
-" markdown preview: opens browser with live reload when vim opens .md
-Plugin 'suan/vim-instant-markdown'
-Plugin 'godlygeek/tabular'
-" language tools
-" Plugin 'scrooloose/syntastic'
-Plugin 'millermedeiros/vim-esformatter'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'elzr/vim-json'
-Plugin 'mattn/emmet-vim'
-" Plugin 'SirVer/ultisnips'
-Plugin 'sheerun/vim-polyglot'
-" plugins from http://vim-scripts.org/vim/scripts.html
-Plugin 'node.js'
-Plugin 'SuperTab'
+Plugin 'garbas/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-commentary'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'skwp/greplace.vim'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-" TypeScript
-Plugin 'leafgarland/typescript-vim'
+Plugin 'stephpy/vim-php-cs-fixer'
+
+" language tools
+Plugin 'millermedeiros/vim-esformatter'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'elzr/vim-json'
+Plugin 'mattn/emmet-vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'node.js'
 " Vue.js
 Plugin 'posva/vim-vue'
 Plugin 'jiangmiao/auto-pairs'
@@ -57,8 +40,6 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 
-
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -71,4 +52,3 @@ filetype plugin indent on    " required
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-
