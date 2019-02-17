@@ -87,7 +87,7 @@ nmap <D-p> :CtrlP<cr>
 nmap <D-r> :CtrlPBufTag<cr>
 nmap <D-e> :CtrlPMRUFiles<cr>
 
-nmap <Leader>f :tag<space>
+nmap <Leader><Leader>f :tag<space>
 
 " Emmet Mappings
 let g:user_emmet_leader_key='<tab>'
@@ -140,9 +140,29 @@ set grepprg=ag 										" Use Ag for search
 
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
-"-------------vim-php-cs-fixer--------------"
+"-------------Code Formatting--------------"
 let g:php_cs_fixer_rules = "@PSR2"
 let g:php_cs_fixer_verbose = 1
+
+"Ale linter settings
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier', 'eslint'],
+\   'typescript': ['prettier'],
+\   'json': ['prettier'],
+\   'yaml': ['prettier'],
+\   'vue': ['prettier'],
+\   'graphql': ['prettier'],
+\   'html': ['prettier'],
+\   'css': ['prettier'],
+\   'scss': ['prettier'],
+\   'markdown': ['prettier'],
+\}
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+let g:airline#extensions#ale#enabled = 1
+" let g:ale_fix_on_save = 1
+nmap <Leader>f <Plug>(ale_fix)
 
 "-------------Ctrlp--------------"
 let g:ctrlp_custom_ignore = {

@@ -27,6 +27,7 @@ Plugin 'skwp/greplace.vim'
 Plugin 'stephpy/vim-php-cs-fixer'
 
 " language tools
+Plugin 'w0rp/ale'
 Plugin 'millermedeiros/vim-esformatter'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'elzr/vim-json'

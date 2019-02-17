@@ -2,7 +2,8 @@
 
 #################################
 # Simple Program Name Shortening
-alias g=git
+
+alias gs='git status'
 
 alias git=hub
 
@@ -102,3 +103,4 @@ alias pa='php artisan'
 
 # Jigsaw Shortcuts
 alias jb='./vendor/bin/jigsaw build'
+

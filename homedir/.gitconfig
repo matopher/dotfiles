@@ -52,6 +52,7 @@
 
 [alias]
   # most commonly used
+  s = status
   co = checkout
   d = diff --color-words
   cam = commit -a -m
