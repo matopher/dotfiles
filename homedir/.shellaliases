@@ -4,29 +4,6 @@
 # Simple Program Name Shortening
 alias g=git
 
-alias gs='git status'
-
-alias gpu='git push origin'
-
-alias ga='git add'
-
-alias gcm='git commit -m'
-
-alias gcam='git commit -a -m'
-
-alias gd='git diff'
-
-alias gco='git checkout'
-
-alias gcb='git checkout -b'
-
-# list branches sorted by last modified
-alias gb="!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
-alias gitrollback='git clean -df && git checkout -- .'
-
-# one-line log
-alias glog='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short'
-
 alias git=hub
 
 alias dotfiles='cd ~/.dotfiles'
