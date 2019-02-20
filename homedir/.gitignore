@@ -28,6 +28,7 @@ id_rsa
 # Tooling #
 ###########
 .vagrant/
+.idea/
 
 #######
 # VIM #
@@ -55,6 +56,8 @@ release.properties
 ########
 # Logs
 *.log
+*.sql
+*.sqlite
 
 # Runtime data
 pids
