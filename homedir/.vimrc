@@ -75,6 +75,8 @@ nmap <Leader>pi :PluginInstall<cr>
 "Shortcut to edit snippets
 nmap <Leader>es :e ~/.vim/snippets/<cr>
 
+nmap <Leader>edl :e /Volumes/GoogleDrive/My Drive/2 Areas/Inbound/drip-member-links-template.html<cr>
+
 "Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
 
