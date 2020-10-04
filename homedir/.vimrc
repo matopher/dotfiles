@@ -2,9 +2,11 @@ syntax enable
 
 "-------------General Settings--------------"
 set backspace=indent,eol,start                                          "Make backspace behave like every other editor.
+
 let mapleader = ','
 set visualbell           " don't beep
 set noerrorbells         " don't beep
+" set autochdir            " automatically change pwd to current directory opened
 " set autowriteall
 
 "Show (partial) command in the status line
@@ -46,10 +48,11 @@ set guioptions-=r
 set guioptions-=R
 
 "-------------Search--------------"
-set hlsearch								"Highlight all matched terms.
+" set hlsearch								"Highlight all matched terms.
 set incsearch								"Incrementally highlight, as we type.
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase,
+nnoremap s :OverCommandLine<cr> %s/
 
 "-------------Split Management--------------"
 set splitbelow
@@ -59,6 +62,17 @@ nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
+
+" vim panes
+nnoremap <leader>w :q<cr>
+nnoremap <leader>/ :vsp<cr>
+nnoremap <leader>- :sp<cr>
+
+" automatically rebalance windows on vim resize
+augroup vimresizing
+  autocmd!
+  autocmd VimResized * :wincmd =
+augroup END
 
 "-------------Vundle--------------"
 set nocompatible              " be iMproved, required
@@ -71,6 +85,7 @@ so ~/.vim/plugins.vim         " Source plugins from separate file
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
 nmap <Leader>evp :tabedit ~/.vim/plugins.vim<cr>
 nmap <Leader>pi :PluginInstall<cr>
+nmap <Leader>en :e %:h/
 
 "Shortcut to edit snippets
 nmap <Leader>es :e ~/.vim/snippets/<cr>
@@ -82,6 +97,9 @@ nmap <Leader><space> :nohlsearch<cr>
 
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
+
+" Jigsaw build shortcut
+nmap <Leader>jb :!./vendor/bin/jigsaw build<cr><cr>
 
 " CtrlP Mappings
 " nmap <D-p> :CtrlP<cr>
@@ -134,8 +152,9 @@ let NERDTreeIgnore=['\.DS_Store$'] 					" let NERDTreeShowHidden=1
 
 let g:NERDTreeHijackNetrw=0
 
-" Toggle NERDtree with Command + k
+" Toggle NERDtree with Command + k or Ctrl + n
 map <D-k> :NERDTreeToggle<CR>
+noremap <C-n> :NERDTreeToggle<cr>
 
 "-------------Greplace.vim--------------"
 set grepprg=ag 										" Use Ag for search
@@ -160,8 +179,8 @@ let g:ale_fixers = {
 \   'scss': ['prettier'],
 \   'markdown': ['prettier'],
 \}
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
+" let g:ale_sign_error = '❌'
+" let g:ale_sign_warning = '⚠️'
 let g:airline#extensions#ale#enabled = 1
 " let g:ale_fix_on_save = 1
 nmap <Leader>f <Plug>(ale_fix)
@@ -179,14 +198,15 @@ let g:ctrlp_extensions = ['buffertag']
 
 let g:sneak#streak = 1
 let g:airline_theme='bubblegum'
+let g:vim_markdown_frontmatter = 1
 
-									" Yank text to the macOS clipboard
+" Yank text to the macOS clipboard
 noremap <leader>y "*y
 noremap <leader>yy "*Y
 
 "Sort PHP use statements
 "http://stackoverflow.com/questions/11531073/how-do-you-sort-a-range-of-lines-by-length
-vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
+" vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
 
 " Tips
 " Press zz to center line in middle of screen 

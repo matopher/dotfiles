@@ -1,3 +1,4 @@
+export TERM="xterm-256color"
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
 # if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
@@ -59,5 +60,22 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
+# Add homebrew ruby to path
+export PATH=/usr/local/opt/ruby/bin:$PATH
+
+# Add ruby gems to path
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
+
 # Force unalias g=git so g() status function will work
 unalias g
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+
+[ -f "/Users/matt/.shopify-app-cli/shopify.sh" ] && source "/Users/matt/.shopify-app-cli/shopify.sh"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# Tailwind Mobile Dev Environment
+export ANDROID_SDK=$HOME/Library/Android/sdk
+export PATH=$ANDROID_SDK/platform-tools:$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk

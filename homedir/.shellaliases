@@ -7,9 +7,15 @@ alias gs='git status'
 
 alias git=hub
 
+alias pr='git pull-request'
+
 alias dotfiles='cd ~/.dotfiles'
 
 alias isync='browser-sync start --server --files="**/*"'
+
+alias tw-s
+
+alias signoff='cd ~/code/tw-signoff && tw-signoff check'
 
 #############################
 # Utilities
@@ -99,8 +105,17 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 alias vtop="vtop --theme wizard"
 
 # Laravel Shortcuts
-alias pa='php artisan'
+alias a='php artisan'
+
+alias p='./vendor/bin/phpunit'
 
 # Jigsaw Shortcuts
 alias jb='./vendor/bin/jigsaw build'
 
+# Git Shortcuts
+alias gcam='git add -A && git commit -m'
+
+# CLI Tool Shortcuts
+alias scan='http-status-check scan'
+
+alias fix-services-permission='tw docker run -- chmod -R 777 /meta/services.json'

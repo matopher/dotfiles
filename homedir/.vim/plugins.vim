@@ -24,6 +24,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'skwp/greplace.vim'
+Plugin 'osyo-manga/vim-over'
 Plugin 'stephpy/vim-php-cs-fixer'
 
 " language tools
@@ -34,9 +35,11 @@ Plugin 'elzr/vim-json'
 Plugin 'mattn/emmet-vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'node.js'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 " Vue.js
 Plugin 'posva/vim-vue'
-Plugin 'jiangmiao/auto-pairs'
+" Plugin 'jiangmiao/auto-pairs'
 " PHP Plugins
 Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
